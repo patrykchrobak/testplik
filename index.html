@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script>
+            var tablica_pytan = [];
+            var plik;
+            var file = 'quiz.txt';
+            var rawFile = new XMLHttpRequest();
+            rawFile.open("GET", file, false);
+            rawFile.onreadystatechange = function ()
+            {
+                if (rawFile.readyState === 4)
+                {
+                    if (rawFile.status === 200 || rawFile.status === 0)
+                    {
+                        var allText = rawFile.responseText;
+                        plik = allText;
+                    }
+                }
+            };
+            rawFile.send(null);
+            tablica_pytan = plik.split("\r\n");
+
+            var pytania = [];
+            for (var i = 0; i <= tablica_pytan.length/6-1; i++) {
+                pytania[i] = [];
+                for (var j = 0; j < 6; j++) {
+                    pytania[i].push(tablica_pytan[i*6+j]);
+                }
+            }
+            console.log(pytania);
+
+
+
+
+
+
+
+
+
+
+            //            var pytania;
+//            document.getElementById("files").onchange=function(){
+//                let file=this.files[0];
+////                console.log(file);
+//                
+//                let reader=new FileReader();
+//                
+//                reader.onload=function(){
+//                    pytania=this.result;
+//                    document.write(pytania);
+//                };
+//                reader.readAsText(file);
+//            };
+//            
+//   
+        </script>
+    </body>
+
+</html>
+
+
+
+
