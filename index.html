@@ -13,6 +13,8 @@ and open the template in the editor.
     <body>
         <div>TODO write content</div>
         <script>
+            
+            
             var tablica_pytan = [];
             var plik;
             var file = 'quiz.txt';
@@ -31,6 +33,7 @@ and open the template in the editor.
             };
             rawFile.send(null);
             tablica_pytan = plik.split("\r\n");
+            document.write(tablica_pytan);
 
             var pytania = [];
             for (var i = 0; i <= tablica_pytan.length/6-1; i++) {
