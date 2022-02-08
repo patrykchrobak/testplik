@@ -17,7 +17,7 @@ and open the template in the editor.
             
             var tablica_pytan = [];
             var plik;
-            var file = 'http://patrykchrobak.github.io/testplik/quiz.txt';
+            var file = 'http://patrykchrobak.github.io/Pilkarze-Reprezentacji-Polski/quiz.txt';
             var rawFile = new XMLHttpRequest();
             rawFile.open("GET", file, false);
             rawFile.onreadystatechange = function ()
@@ -32,7 +32,7 @@ and open the template in the editor.
                 }
             };
             rawFile.send(null);
-            tablica_pytan = plik.split("\r\n");
+            tablica_pytan = plik.split("\n");
             document.write(tablica_pytan);
 
             var pytania = [];
@@ -42,6 +42,7 @@ and open the template in the editor.
                     pytania[i].push(tablica_pytan[i*6+j]);
                 }
             }
+            console.log(tablica_pytan);
             console.log(pytania);
 
 
